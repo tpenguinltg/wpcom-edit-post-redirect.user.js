@@ -3,7 +3,8 @@
 // @namespace   tpenguinltg
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post/*
-// @version     0.1.0
+// @version     1.0.0
+// @updateURL   https://greasyfork.org/scripts/8581-wordpress-com-edit-post-redirects/code/WordPresscom%20edit%20post%20redirects.user.js
 // @grant       none
 // @license     MPLv2.0; http://mozilla.org/MPL/2.0/
 // @copyright   2015, tPenguinLTG (http://tpenguinltg.wordpress.com/)
