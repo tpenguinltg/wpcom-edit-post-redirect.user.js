@@ -4,3 +4,6 @@
 ## Installation
 If you don't already have one, install [a browser extension](https://greasyfork.org/en/help/installing-user-scripts) that allows you to run user scripts. Then, visit the URL below:
 [https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js]()
+
+## Known Issues
+* The new interface will start loading and appear before the redirect occurs
