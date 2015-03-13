@@ -7,3 +7,7 @@ If you don't already have one, install [a browser extension](https://greasyfork.
 
 ## Known Issues
 * The new interface will start loading and appear before the redirect occurs
+
+## Changelog
+* **v1.0.0:** Initial release
+* **v1.0.1:** Change updateURL to point to GitHub source
