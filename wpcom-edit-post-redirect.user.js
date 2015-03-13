@@ -31,6 +31,7 @@ function fetchJSONFile(path, callback) {
 
 
 // Redirect to post URL based on API results
+// API docs: https://developer.wordpress.com/docs/api/
 fetchJSONFile("https://public-api.wordpress.com/rest/v1.1/sites/"+blogid, function(data) {
   var postURL;
 
