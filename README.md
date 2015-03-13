@@ -6,6 +6,8 @@ If you don't already have one, install [a browser extension](https://greasyfork.
 
 [https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js](https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js)
 
+Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects).
+
 ## Known Issues
 * The new interface will start loading and appear before the redirect occurs
 
