@@ -3,7 +3,7 @@
 // @namespace   tpenguinltg
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post/*
-// @version     1.0.1
+// @version     1.0.2
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
@@ -13,8 +13,9 @@
 // @run-at      document-start
 // ==/UserScript==
 
-var blogid=window.location.pathname.match(/\d+/)[0];
-var postid=window.location.pathname.match(/\d+\/(\d+|new)/)[1];
+var parsedUrl=window.location.pathname.match(/(\d+)\/(\d+|new)/);
+var blogid=parsedUrl[1];
+var postid=parsedUrl[2];
 
 // Function by dystroy. From http://stackoverflow.com/a/14388512
 function fetchJSONFile(path, callback) {
