@@ -48,4 +48,3 @@ fetchJSONFile("https://public-api.wordpress.com/rest/v1.1/sites/"+blogid, functi
   window.location.replace(postURL);
 
 });
-
