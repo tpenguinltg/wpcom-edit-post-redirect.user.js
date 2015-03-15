@@ -9,7 +9,10 @@ If you don't already have one, install [a browser extension](https://greasyfork.
 Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects).
 
 ## Known Issues
-* The new interface will start loading and appear before the redirect occurs
+* The new interface will sometimes start loading and appear before the redirect occurs
+* The redirection will likely fail if the site root is different from the installation root for Jetpack-enabled sites.
+
+  e.g. the site is accessed from *http://example.com/*, but the installation root is *http://example.com/wordpress/*.
 
 ## Changelog
 * **v1.0.0:** Initial release
