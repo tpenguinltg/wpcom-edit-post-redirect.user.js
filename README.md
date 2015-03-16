@@ -1,4 +1,4 @@
-# wpcom-post-redirect.user.js
+# wpcom-edit-post-redirect.user.js
 [WordPress.com](https://wordpress.com/) has removed the preference to edit posts using the classic interface. This user script forces a redirect to the classic interface when the new edit interface is visited.
 
 ## Installation
