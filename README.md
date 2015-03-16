@@ -18,3 +18,4 @@ Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-
 * **v1.0.0:** Initial release
 * **v1.0.1:** Change updateURL to point to GitHub source
 * **v1.0.2:** Reduce to single regex call
+* **v1.1.0:** Add support for editing pages

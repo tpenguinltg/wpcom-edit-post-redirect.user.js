@@ -3,7 +3,8 @@
 // @namespace   tpenguinltg
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post/*
-// @version     1.0.2
+// @include     https://wordpress.com/page/*
+// @version     1.1.0
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
@@ -13,9 +14,10 @@
 // @run-at      document-start
 // ==/UserScript==
 
-var parsedUrl=window.location.pathname.match(/(\d+)\/(\d+|new)/);
-var blogid=parsedUrl[1];
-var postid=parsedUrl[2];
+var parsedUrl=window.location.pathname.match(/(post|page)\/(\d+)\/(\d+|new)/);
+var postType=parsedUrl[1];
+var blogid=parsedUrl[2];
+var postid=parsedUrl[3];
 
 // Function by dystroy. From http://stackoverflow.com/a/14388512
 function fetchJSONFile(path, callback) {
@@ -39,7 +41,7 @@ fetchJSONFile("https://public-api.wordpress.com/rest/v1.1/sites/"+blogid, functi
   var postURL;
 
   if(postid == "new") {
-    postURL=data.URL+"/wp-admin/post-new.php";
+    postURL=data.URL+"/wp-admin/post-new.php?post_type="+postType;
   }//if
   else {
     postURL=data.URL+"/wp-admin/post.php?post="+postid+"&action=edit";
