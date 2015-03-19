@@ -9,13 +9,17 @@ If you don't already have one, install [a browser extension](https://greasyfork.
 Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects).
 
 ## Known Issues
-* The new interface will sometimes start loading and appear before the redirect occurs
-* The redirection will likely fail if the site root is different from the installation root for Jetpack-enabled sites.
+*   The new interface will sometimes start loading and appear before the redirect occurs
 
-  e.g. the site is accessed from *http://example.com/*, but the installation root is *http://example.com/wordpress/*.
+    *   For unattached post editing (i.e. editing a new post without first specifiying a blog; accessed from [https://wordpress.com/post](https://wordpress.com/post)), the new editor will load completely before being redirected.
+        
+*   The redirection will likely fail if the site root is different from the installation root for Jetpack-enabled sites.
+
+    e.g. the site is accessed from *http://example.com/*, but the installation root is *http://example.com/wordpress/*.
 
 ## Changelog
 * **v1.0.0:** Initial release
 * **v1.0.1:** Change updateURL to point to GitHub source
 * **v1.0.2:** Reduce to single regex call
 * **v1.1.0:** Add support for editing pages
+* **v1.2.0:** Add redirect for unattached post editing
