@@ -4,7 +4,7 @@
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post*
 // @include     https://wordpress.com/page*
-// @version     1.2.0
+// @version     1.2.1
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
@@ -38,7 +38,7 @@ var postid=parsedUrl[4];
 // if no blog given
 if(!blogid) {
   // scrape the edit URL from the page when the DOM has finished loading
-  document.onload=function() {
+  window.onload=function() {
     window.location.replace(document.getElementsByClassName("switch-to-classic")[0].children[0].href);
   }; //end document.onload
 }// if
@@ -49,12 +49,10 @@ else {
     var postURL;
 
     if(postid == "new") {
-      //postURL=data.URL+"/wp-admin/post-new.php?post_type="+postType;
-      postURL=data.options.admin_url+"/post-new.php?post_type="+postType;
+      postURL=data.URL+"/wp-admin/post-new.php?post_type="+postType;
     }//if
     else {
-      //postURL=data.URL+"/wp-admin/post.php?post="+postid+"&action=edit";
-      postURL=data.options.admin_url+"/post-new.php?post_type="+postType;
+      postURL=data.URL+"/wp-admin/post.php?post="+postid+"&action=edit";
     }//end if
 
     window.location.replace(postURL);
