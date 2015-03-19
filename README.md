@@ -23,3 +23,4 @@ Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-
 * **v1.0.2:** Reduce to single regex call
 * **v1.1.0:** Add support for editing pages
 * **v1.2.0:** Add redirect for unattached post editing
+* **v1.2.1:** Remove testing code that prevented redirection
