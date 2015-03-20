@@ -40,7 +40,7 @@ if(!blogid) {
   // scrape the edit URL from the page when the DOM has finished loading
   window.onload=function() {
     window.location.replace(document.getElementsByClassName("switch-to-classic")[0].children[0].href);
-  }; //end document.onload
+  }; //end window.onload
 }// if
 else {
   // Redirect to post URL based on API results
