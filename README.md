@@ -29,3 +29,4 @@ Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-
 * **v1.2.0:** Add redirect for unattached post editing
 * **v1.2.1:** Remove testing code that prevented redirection
 * **v1.2.2:** Fixed redirection for private and Jetpack-enabled blogs
+* **v1.2.3:** Code cleanup and documentation

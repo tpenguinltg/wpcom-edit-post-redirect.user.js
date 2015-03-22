@@ -4,7 +4,7 @@
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post*
 // @include     https://wordpress.com/page*
-// @version     1.2.2
+// @version     1.2.3
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
@@ -14,6 +14,35 @@
 // @run-at      document-start
 // ==/UserScript==
 
+// gather information from URL
+var parsedUrl=window.location.pathname.match(/(post|page)(\/(\d+)\/(\d+|new))?/);
+var postType=parsedUrl[1];
+var blogid=parsedUrl[3];
+var postid=parsedUrl[4];
+
+/**
+ * Initiates the redirect.
+ */
+function redirectToClassic() {
+  // if no blog specified
+  if(!blogid) {
+    scrapeClassicLink();
+  }// if
+  else {
+    // Redirect to post URL based on API results
+    // API docs: https://developer.wordpress.com/docs/api/
+    fetchJSONFile("https://public-api.wordpress.com/rest/v1.1/sites/"+blogid, apiRedirect, scrapeClassicLink);
+  }//end if
+}//end redirectToClassic
+
+
+/**
+ * Handles the API request via AJAX.
+ * @param path      the URL to request. The response should be a JSON object.
+ * @param callback  the function to call on success.
+ *                  This function should take in a single JSON object.
+ * @param fallback  the function to call on failure
+ */
 // Based on function by dystroy. From http://stackoverflow.com/a/14388512
 function fetchJSONFile(path, callback, fallback) {
     var httpRequest = new XMLHttpRequest();
@@ -47,6 +76,7 @@ function scrapeClassicLink() {
 
 /**
  * Sets up a redirect using the given parsed API data.
+ * @param data  the parsed API results as a JSON object
  */
 function apiRedirect(data) {
     // if not a private blog and is not Jetpack-enabled, redirect using API
@@ -74,20 +104,5 @@ function apiRedirect(data) {
 }//end apiRedirect
 
 
-// start
-
-// gather information from URL
-var parsedUrl=window.location.pathname.match(/(post|page)(\/(\d+)\/(\d+|new))?/);
-var postType=parsedUrl[1];
-var blogid=parsedUrl[3];
-var postid=parsedUrl[4];
-
-// if no blog given
-if(!blogid) {
-  scrapeClassicLink();
-}// if
-else {
-  // Redirect to post URL based on API results
-  // API docs: https://developer.wordpress.com/docs/api/
-  fetchJSONFile("https://public-api.wordpress.com/rest/v1.1/sites/"+blogid, apiRedirect, scrapeClassicLink);
-}//end if
+// initiate redirect
+redirectToClassic();
