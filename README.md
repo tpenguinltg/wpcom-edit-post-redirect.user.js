@@ -12,10 +12,14 @@ Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-
 *   The new interface will sometimes start loading and appear before the redirect occurs
 
     *   For unattached post editing (i.e. editing a new post without first specifiying a blog; accessed from [https://wordpress.com/post](https://wordpress.com/post)), the new editor will load completely before being redirected.
+    *   The new editor will also load completely for private and Jetpack-enabled. This is an API limitation.
         
-*   The redirection will likely fail if the site root is different from the installation root for Jetpack-enabled sites.
+*   <del>The redirection will likely fail if the site root is different from the installation root for Jetpack-enabled sites.</del>
 
-    e.g. the site is accessed from *http://example.com/*, but the installation root is *http://example.com/wordpress/*.
+    <del>e.g. the site is accessed from *http://example.com/*, but the installation root is *http://example.com/wordpress/*.</del>
+
+    **Fixed in v1.2.2**
+
 
 ## Changelog
 * **v1.0.0:** Initial release
@@ -24,3 +28,4 @@ Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-
 * **v1.1.0:** Add support for editing pages
 * **v1.2.0:** Add redirect for unattached post editing
 * **v1.2.1:** Remove testing code that prevented redirection
+* **v1.2.2:** Fixed redirection for private and Jetpack-enabled blogs
