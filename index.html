@@ -85,7 +85,6 @@
           <li>
             <p>Install the script by clicking the Install link below:</p>
             <p><strong>[<a href="https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js">Install</a>]</strong></p>
-            </p>
           </li>
         </ol>
         <p>Any time you visit a link to the new editor, you will be redirected to the classic one. Note that because of the way the script works, you may see the new editor briefly, and it will load completely before redirecting for private and Jetpack-enabled blogs.</p>
@@ -110,16 +109,16 @@
         <p>For every blog, you will want to bookmark at the very least these two links, changing "example.wordpress.com" to your own blog:</p>
         <dl>
           <dt>New Post</dt>
-          <dd><strong>http://<i>example.wordpress.com</i>/wp-admin/post-new.php</strong></dd>
+          <dd><strong>http://<var>example.wordpress.com</var>/wp-admin/post-new.php</strong></dd>
           <dt>All Posts</dt>
-          <dd><strong>http://<i>example.wordpress.com</i>/wp-admin/edit.php</strong></dd>
+          <dd><strong>http://<var>example.wordpress.com</var>/wp-admin/edit.php</strong></dd>
           <dt>Dashboard</dt>
-          <dd><strong>http://<i>example.wordpress.com</i>/wp-admin/</strong></dd>
+          <dd><strong>http://<var>example.wordpress.com</var>/wp-admin/</strong></dd>
         </dl>
         <p>Use the "New Post" bookmark to make a new post for that blog, and use "All Posts" to edit an existing post (you will have to search for the post). Edit links on your site will still point to the new editor and will not be redirected to the classic editor. "Dashboard" will take you to your site's classic dashboard, where you can access anything that has to do with your site.</p>
         <div id="bookmark-tool">
         <p>To make it easy, you can enter your blog's domain (e.g. <i>example.wordpress.com</i>, <i>example.com</i>, etc.) below to generate these links for you for easy bookmarking. This tool is not guaranteed to work with Jetpack-enabled blogs.</p>
-          <label>Domain: <input type="text" id="domain" value="example.wordpress.com" onkeypress="onEnterPress(event,generateLinks)"; /></label>
+          <label>Domain: <input type="text" id="domain" value="example.wordpress.com" onkeypress="onEnterPress(event,generateLinks)" /></label>
           <button id="bookmark-gen-btn" onclick="generateLinks()">Generate Links</button>
           <ul id="bookmark-output">
             <li><a id="bookmark-new-post" href="http://example.wordpress.com/wp-admin/post-new.php">New Post on example.wordpress.com</a></li>
