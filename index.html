@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-CA" xml:lang="en-CA">
   <head>
-    <title>Going back to the classic editor</title>
     <meta charset="UTF-8" />
-    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <title>Going back to the classic editor</title>
+
+    <style type="text/css">
+    </style>
+
     <script type="text/javascript"><!--//--><![CDATA[
       function generateLinks(domain)
         {
@@ -117,7 +120,7 @@
         </dl>
         <p>Use the "New Post" bookmark to make a new post for that blog, and use "All Posts" to edit an existing post (you will have to search for the post). Edit links on your site will still point to the new editor and will not be redirected to the classic editor. "Dashboard" will take you to your site's classic dashboard, where you can access anything that has to do with your site.</p>
         <div id="bookmark-tool">
-        <p>To make it easy, you can enter your blog's domain (e.g. <i>example.wordpress.com</i>, <i>example.com</i>, etc.) below to generate these links for you for easy bookmarking. This tool is not guaranteed to work with Jetpack-enabled blogs.</p>
+        <p>To make it easy, you can enter your blog's domain (e.g. <var>example.wordpress.com</var>, <var>example.com</var>, etc.) below to generate these links for you for easy bookmarking. This tool is not guaranteed to work with Jetpack-enabled blogs.</p>
           <label>Domain: <input type="text" id="domain" value="example.wordpress.com" onkeypress="onEnterPress(event,generateLinks)" /></label>
           <button id="bookmark-gen-btn" onclick="generateLinks()">Generate Links</button>
           <ul id="bookmark-output">
@@ -138,8 +141,8 @@
       <hr />
       <!-- Copyright -->
       <footer>
-        <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p>
-        <p>&copy; 2015, tPenguinLTG. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+        <p id="copyright"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+          &copy;2015, <a href="http://tpenguinltg.wordpress.com/">tPenguinLTG</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
       </footer>
     </article>
   </body>
