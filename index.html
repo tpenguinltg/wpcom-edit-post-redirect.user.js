@@ -20,11 +20,40 @@
       <section id="userscript">
         <h1>Automatic redirect: using a user script</h1>
         <p>I argue that this is the easiest because the only hard part is the initial installation. After that, everything redirects automatically without your input and you can almost forget you're using a script.</p>
+        <p>This method works best for Mozilla Firefox, Google Chrome, Opera, and their derivatives. If you are using Safari or Internet Explorer, it may be easier to use the <a href="#bookmarklet">bookmarklet method</a> instead. If you don't know what browser you're using, you can go to <a href="https://www.whatismybrowser.com/">whatismybrowser.com</a> to find out.</p>
+        <p>Follow these steps to install the script:</p>
+        <ol>
+          <li><p>Install an add-on for your browser to run user scripts:</p>
+            <dl>
+              <dt>Firefox and derivatives</dt>
+              <dd><a href="https://addons.mozilla.org/firefox/addon/greasemonkey/">Greasemonkey</a> or <a href="https://addons.mozilla.org/en-US/firefox/addon/scriptish/">Scriptish</a></dd>
+              <dt>Chrome and derivatives</dt>
+              <dd><a href="">Tampermonkey</a></dd>
+              <dt>Opera</dt>
+              <dd><a href="https://addons.opera.com/en/extensions/details/tampermonkey-beta/">Tampermonkey</a>, <a href="https://addons.opera.com/en/extensions/details/violent-monkey/">Violentmonkey</a></dd>
+              <dt>Safari</dt>
+              <dd><a href="http://ss-o.net/safari/extension/NinjaKit.safariextz">NinjaKit</a></dd>
+              <dt>Internet Explorer</dt>
+              <dd><a href="http://sourceforge.net/projects/trixiewpf45/">TrixIE</a></dd>
+            </dl>
+          </li>
+          <li>
+            <p>Install the script by clicking the Install link below:</p>
+            <p><strong>[<a href="https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js">Install</a>]</strong></p>
+            </p>
+          </li>
+        </ol>
+        <p>Any time you visit a link to the new editor, you will be redirected to the classic one. Note that because of the way the script works, you may see the new editor briefly, and it will load completely before redirecting for private and Jetpack-enabled blogs.</p>
       </section>
 
       <!-- Bookmarklet -->
       <section id="bookmarklet">
         <h1>Manual redirect: using a bookmarklet</h1>
+        <p>This method is the easiest to set up and very simple to use. Drag the link below into your bookmarks:</p>
+        <p><strong><a href="javascript:window.location.replace(document.getElementsByClassName('switch-to-classic')[0].children[0].href)">Edit in classic editor</a></strong></p>
+        <p>Or, if you can't drag, create a new bookmark with the following URL:</p>
+        <p><code>javascript:window.location.replace(document.getElementsByClassName('switch-to-classic')[0].children[0].href)</code></p>
+        <p>When you're on the new editor, click on the bookmark you made to edit your post in the classic editor. Note that any unsaved changes you made to the post will be lost after clicking the bookmark.</p>
       </section>
 
       <!-- Manual per-site bookmarks -->
@@ -36,6 +65,8 @@
       <!-- WordPress.org installation -->
       <section id="wporg">
         <h1>External editing: using WordPress.org</h1>
+        <p>This method is a lot more trouble than it's worth. The idea is to set up a <a href="https://wordpress.org/">WordPress.org</a> installation somewhere, write (and possibly publish) your posts there, and manually copy your post's content to WordPress.com.</p>
+        <p>If you're doing this, you may as well just move to your WordPress.org installation and not use WordPress.com.</p>
       </section>
 
       <!-- Copyright -->
