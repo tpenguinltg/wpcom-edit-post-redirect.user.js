@@ -4,7 +4,42 @@
     <title>Going back to the classic editor</title>
     <meta charset="UTF-8" />
     <link href="./css/main.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="./js/bookmarkgen.js"></script>
+    <script type="text/javascript"><!--//--><![CDATA[
+      function generateLinks(domain)
+        {
+        // if no domain given, take from input field
+        if(!domain)
+          {
+          domain=document.getElementById("domain").value;
+          }//end if
+
+        var baseUrl="http://"+domain+"/wp-admin/";
+
+        // New Post
+        document.getElementById("bookmark-new-post").href=baseUrl+"post-new.php";
+        document.getElementById("bookmark-new-post").innerHTML="New Post on "+domain;
+
+        // All Posts
+        document.getElementById("bookmark-all-posts").href=baseUrl+"edit.php";
+        document.getElementById("bookmark-all-posts").innerHTML="All Posts on "+domain;
+
+        // Dashboard
+        document.getElementById("bookmark-dashboard").href=baseUrl;
+        document.getElementById("bookmark-dashboard").innerHTML="Dashboard for "+domain;
+        }//end generateLinks
+
+
+        // based on code by kdenney: http://stackoverflow.com/a/155265
+        function onEnterPress(e,callback)
+          {
+          // look for window.event in case event isn't passed in
+          e = e || window.event;
+          if (e.keyCode == 13 && callback)
+            {
+            callback();
+            }//end if
+          }// end onEnterPress
+    //]]></script>
   </head>
 
   <body>
@@ -15,6 +50,16 @@
       <p>I'm sure most people would be fine with this as long as we are given a choice of interface, and that that choice remains consistent through our experience. However, on <time datetime="2015-03-13">March 13, 2015</time>, the preference setting for the choice of editor, which was implemented by a cookie a link back to the classic editor, was removed. Cue the uproar of the mass of angry and frustrated users when their cookies expire. <a href="https://en.forums.wordpress.com/topic/please-reinstate-the-option-of-choice-to-use-the-old-publishing-format">Pages of complaints</a> have been posted in the forums in response to the editor essentially being forced on us.</p>
       <p>If you like the new editor, then by all means use it because it's all about choice. But if you're also displeased with the new editor and would like to continue using the classic editor, you'll be glad to know that there are a few workarounds. They are listed here in order of overall ease of installation and use.</p>
 
+      <nav>
+        <ul>
+          <li><a href="#userscript">User Script</a></li>
+          <li><a href="#bookmarklet">Bookmarklet</a></li>
+          <li><a href="#bookmarks">Per-site bookmarks</a>
+            <ul><li><a href="#bookmark-tool">Bookmark tool</a></li></ul>
+          </li>
+          <li><a href="#wporg">WordPress.org</a></li>
+        </ul>
+      </nav>
 
       <!-- Userscript -->
       <section id="userscript">
@@ -44,12 +89,14 @@
           </li>
         </ol>
         <p>Any time you visit a link to the new editor, you will be redirected to the classic one. Note that because of the way the script works, you may see the new editor briefly, and it will load completely before redirecting for private and Jetpack-enabled blogs.</p>
+        <p>View the source on <a href="https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js">GitHub</a>. Also on <a href="https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects">Greasy Fork</a>.</p>
       </section>
 
       <!-- Bookmarklet -->
       <section id="bookmarklet">
         <h1>Manual redirect: using a bookmarklet</h1>
-        <p>This method is the easiest to set up and very simple to use. Drag the link below into your bookmarks:</p>
+        <p>This method is the easiest to set up and very simple to use. Use this if you can't use the script above or if you want to have a choice between the new and classic editors.</p>
+        <p>Drag the link below into your bookmarks:</p>
         <p><strong><a href="javascript:window.location.replace(document.getElementsByClassName('switch-to-classic')[0].children[0].href)">Edit in classic editor</a></strong></p>
         <p>Or, if you can't drag, create a new bookmark with the following URL:</p>
         <p><code>javascript:window.location.replace(document.getElementsByClassName('switch-to-classic')[0].children[0].href)</code></p>
@@ -59,7 +106,27 @@
       <!-- Manual per-site bookmarks -->
       <section id="manual-bookmarks">
         <h1>Explicit request: using bookmarks for each site</h1>
-        <p>This method is painstakingly tedious and time-consuming; I recommend using one of the methods above if you can. This is included here for completeness, especially because it's the only officially endorsed solution.</p>
+        <p>This method is painstakingly tedious and time-consuming; I recommend using one of the methods above if you can. This is the only officially endorsed solution.</p>
+        <p>For every blog, you will want to bookmark at the very least these two links, changing "example.wordpress.com" to your own blog:</p>
+        <dl>
+          <dt>New Post</dt>
+          <dd><strong>http://<i>example.wordpress.com</i>/wp-admin/post-new.php</strong></dd>
+          <dt>All Posts</dt>
+          <dd><strong>http://<i>example.wordpress.com</i>/wp-admin/edit.php</strong></dd>
+          <dt>Dashboard</dt>
+          <dd><strong>http://<i>example.wordpress.com</i>/wp-admin/</strong></dd>
+        </dl>
+        <p>Use the "New Post" bookmark to make a new post for that blog, and use "All Posts" to edit an existing post (you will have to search for the post). Edit links on your site will still point to the new editor and will not be redirected to the classic editor. "Dashboard" will take you to your site's classic dashboard, where you can access anything that has to do with your site.</p>
+        <div id="bookmark-tool">
+        <p>To make it easy, you can enter your blog's domain (e.g. <i>example.wordpress.com</i>, <i>example.com</i>, etc.) below to generate these links for you for easy bookmarking. This tool is not guaranteed to work with Jetpack-enabled blogs.</p>
+          <label>Domain: <input type="text" id="domain" value="example.wordpress.com" onkeypress="onEnterPress(event,generateLinks)"; /></label>
+          <button id="bookmark-gen-btn" onclick="generateLinks()">Generate Links</button>
+          <ul id="bookmark-output">
+            <li><a id="bookmark-new-post" href="http://example.wordpress.com/wp-admin/post-new.php">New Post on example.wordpress.com</a></li>
+            <li><a id="bookmark-all-posts" href="http://example.wordpress.com/wp-admin/edit.php">All Posts on example.wordpress.com</a></li>
+            <li><a id="bookmark-dashboard" href="http://example.wordpress.com/wp-admin/">Dashboard for example.wordpress.com</a></li>
+          </ul>
+        </div>
       </section>
 
       <!-- WordPress.org installation -->
@@ -69,8 +136,11 @@
         <p>If you're doing this, you may as well just move to your WordPress.org installation and not use WordPress.com.</p>
       </section>
 
+      <hr />
       <!-- Copyright -->
       <footer>
+        <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p>
+        <p>&copy; 2015, tPenguinLTG. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
       </footer>
     </article>
   </body>
