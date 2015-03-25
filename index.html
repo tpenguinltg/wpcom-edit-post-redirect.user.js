@@ -145,5 +145,27 @@
           &copy;2015, <a href="http://tpenguinltg.wordpress.com/">tPenguinLTG</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
       </footer>
     </article>
+
+    <script type="text/javascript"><!--//--><![CDATA[
+      // Function by jolly.exe
+      // Returns value of specified GET query
+      // From http://stackoverflow.com/a/901144
+      function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }//end getParameterByName
+
+      // if domain is specified as a GET query, update bookmark tool
+      (function(){
+        var domain=getParameterByName("domain");
+        if(domain)
+          {
+          document.getElementById("domain").value=domain;
+          generateLinks(domain);
+          }//end if
+      })();
+    //]]></script>
   </body>
 </html>
