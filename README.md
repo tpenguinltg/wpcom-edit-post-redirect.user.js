@@ -16,9 +16,12 @@ Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-
         
 *   <del>The redirection will likely fail if the site root is different from the installation root for Jetpack-enabled sites.</del>
 
-    <del>e.g. the site is accessed from *http://example.com/*, but the installation root is *http://example.com/wordpress/*.</del>
+    <del>e.g. the site is accessed from <i>http://example.com/</i>, but the installation root is <i>http://example.com/wordpress/</i>.</del>
 
     **Fixed in v1.2.2**
+
+## Other workarounds
+If you don't like this script or can't use it for any reason, there are [other workarounds](http://git.io/wpcom-restore-classic-ed) available.
 
 
 ## Changelog
