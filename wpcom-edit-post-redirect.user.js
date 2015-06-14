@@ -4,7 +4,7 @@
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post*
 // @include     https://wordpress.com/page*
-// @version     1.3.0
+// @version     1.3.1
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
@@ -71,7 +71,7 @@ function scrapeClassicLink() {
     var classicLink="";
 
     //new post
-    if(postid == "new") {
+    if(postid == "new" || !blogid) {
       var blogurl=jQuery(".site.blog-select-click.is-selected").attr("data-blogurl");
       classicLink=blogurl+"/wp-admin/post-new.php?post_type="+postType;
     }//if
