@@ -30,3 +30,4 @@ If you don't like this script or can't use it for any reason, there are [other w
 * **v1.2.2:** Fixed redirection for private and Jetpack-enabled blogs
 * **v1.2.3:** Code cleanup and documentation
 * **v1.3.0:** Fix new post redirection for private and Jetpack-enabled blogs
+* **v1.3.1:** Fix new post redirection for default blog
