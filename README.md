@@ -10,11 +10,7 @@ Also on [Greasy Fork](https://greasyfork.org/en/scripts/8581-wordpress-com-edit-
 
 ## Known Issues
 *   The new interface will sometimes start loading and appear before the redirect occurs
-
-    *   For unattached post editing (i.e. editing a new post without first specifiying a blog; accessed from [https://wordpress.com/post](https://wordpress.com/post)), the new editor will load completely before being redirected.
-    *   The new editor will also load completely for private and Jetpack-enabled. This is an API limitation.
-        
-*   <del>When editing new posts (i.e. posts without a post ID) on Jetpack-enabled sites, the redirection will likely fail if the site root is different from the installation root (e.g. the site is accessed from <i>http://example.com/</i>, but the installation root is <i>http://example.com/wordpress/</i>.).</del>
+*   The redirection will likely fail on Jetpack-enabled sites whose site root is different from its installation root (e.g. the site is accessed from <i>http://example.com/</i>, but the installation root is <i>http://example.com/wordpress/</i>).
 
 ## Other workarounds
 If you don't like this script or can't use it for any reason, there are [other workarounds](http://git.io/wpcom-restore-classic-ed) available.
@@ -31,3 +27,4 @@ If you don't like this script or can't use it for any reason, there are [other w
 * **v1.2.3:** Code cleanup and documentation
 * **v1.3.0:** Fix new post redirection for private and Jetpack-enabled blogs
 * **v1.3.1:** Fix new post redirection for default blog
+* **v1.4.0:** Update for [new editor](https://en.blog.wordpress.com/2015/11/16/new-high-speed-editor/)
