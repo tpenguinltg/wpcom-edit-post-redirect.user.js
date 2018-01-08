@@ -101,12 +101,12 @@
       <!-- Bookmarklet -->
       <section id="bookmarklet">
         <h1>Manual redirect: using a bookmarklet</h1>
-        <p><strong>Last updated 2015-11-21</strong></p>
+        <p><strong>Last updated 2018-01-08</strong></p>
         <p>This method is the easiest to set up and is very simple to use, but it is not guaranteed to work with Jetpack-enabled sites. Use this if you can't use the script above or if you want to have a choice between the new and classic editors.</p>
         <p>Drag the link below into your bookmarks:</p>
-        <p><strong><a href="javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.post-editor__sidebar a.site__content').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit'))})()">Edit in classic editor</a></strong></p>
+        <p><strong><a href="javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.site__content[href]').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit'))})()">Edit in classic editor</a></strong></p>
         <p>Or, if you can't drag, create a new bookmark with the following URI:</p>
-        <p><code>javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.post-editor__sidebar a.site__content').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit'))})()</code></p>
+        <p><code>javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.site__content[href]').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit'))})()</code></p>
         <p>When you're on the new editor, click on the bookmark you made to edit your post in the classic editor. Note that any unsaved changes you made to the post will be lost after clicking the bookmark.</p>
       </section>
 
