@@ -4,7 +4,7 @@
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post*
 // @include     https://wordpress.com/page*
-// @version     1.4.0
+// @version     1.5.0
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
