@@ -4,7 +4,7 @@
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post*
 // @include     https://wordpress.com/page*
-// @version     1.4.0
+// @version     1.5.0
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
@@ -107,7 +107,7 @@ function scrapeSiteLink() {
     // different WordPress and site roots
     // e.g. site is accessed at http://example.com/,
     // but admin at http://example.com/wordpress/wp-admin/
-    blogurl=document.querySelector(".post-editor__sidebar a.site__content").href;
+    blogurl=document.querySelector(".site__content[href]").href;
 
     // strip trailing slash
     if(blogurl.charAt(blogurl.length-1) === '/') {
