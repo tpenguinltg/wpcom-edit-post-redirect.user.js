@@ -107,7 +107,7 @@ function scrapeSiteLink() {
     // different WordPress and site roots
     // e.g. site is accessed at http://example.com/,
     // but admin at http://example.com/wordpress/wp-admin/
-    blogurl=document.querySelector(".post-editor__sidebar a.site__content").href;
+    blogurl=document.querySelector(".site__content[href]").href;
 
     // strip trailing slash
     if(blogurl.charAt(blogurl.length-1) === '/') {
