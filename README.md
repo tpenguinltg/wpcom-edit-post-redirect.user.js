@@ -17,14 +17,14 @@ If you don't like this script or can't use it for any reason, there are [other w
 
 
 ## Changelog
-* **v1.0.0:** Initial release
-* **v1.0.1:** Change updateURL to point to GitHub source
-* **v1.0.2:** Reduce to single regex call
-* **v1.1.0:** Add support for editing pages
-* **v1.2.0:** Add redirect for unattached post editing
-* **v1.2.1:** Remove testing code that prevented redirection
-* **v1.2.2:** Fixed redirection for private and Jetpack-enabled blogs
-* **v1.2.3:** Code cleanup and documentation
-* **v1.3.0:** Fix new post redirection for private and Jetpack-enabled blogs
-* **v1.3.1:** Fix new post redirection for default blog
 * **v1.4.0:** Update for [new editor](https://en.blog.wordpress.com/2015/11/16/new-high-speed-editor/)
+* **v1.3.1:** Fix new post redirection for default blog
+* **v1.3.0:** Fix new post redirection for private and Jetpack-enabled blogs
+* **v1.2.3:** Code cleanup and documentation
+* **v1.2.2:** Fixed redirection for private and Jetpack-enabled blogs
+* **v1.2.1:** Remove testing code that prevented redirection
+* **v1.2.0:** Add redirect for unattached post editing
+* **v1.1.0:** Add support for editing pages
+* **v1.0.2:** Reduce to single regex call
+* **v1.0.1:** Change updateURL to point to GitHub source
+* **v1.0.0:** Initial release
