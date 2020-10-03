@@ -109,7 +109,7 @@
       <!-- Bookmarklet -->
       <section id="bookmarklet">
         <h1>Manual redirect: using a bookmarklet</h1>
-        <p><strong>Last updated 2018-01-08</strong></p>
+        <p><strong>Last updated 2020-10-02</strong></p>
         <p>This method is the easiest to set up and is very simple to use, but it is not guaranteed to work with Jetpack-enabled sites. Use this if you can't use the script above or if you want to have a choice between the new and classic editors.</p>
         <p>Drag the link below into your bookmarks:</p>
         <p><strong><a href="javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.site__content[href]').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]+'&amp;classic-editor'):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit&amp;classic-editor'))})()">Edit in classic editor</a></strong></p>
@@ -161,7 +161,7 @@
       <!-- Copyright -->
       <footer>
         <p id="copyright"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
-          &copy;2015&ndash;2018, <a href="http://tpenguinltg.wordpress.com/">tPenguinLTG</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+          &copy;2015&ndash;2020, <a href="http://tpenguinltg.wordpress.com/">tPenguinLTG</a>. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
         <p>Edit this document on <a href="https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/tree/gh-pages">GitHub</a>.</p>
       </footer>
     </article>
