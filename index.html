@@ -19,7 +19,7 @@
         var baseUrl="http://"+domain+"/wp-admin/";
 
         // New Post
-        document.getElementById("bookmark-new-post").href=baseUrl+"post-new.php";
+        document.getElementById("bookmark-new-post").href=baseUrl+"post-new.php?classic-editor";
         document.getElementById("bookmark-new-post").innerHTML="New Post on "+domain;
 
         // All Posts
@@ -112,9 +112,9 @@
         <p><strong>Last updated 2018-01-08</strong></p>
         <p>This method is the easiest to set up and is very simple to use, but it is not guaranteed to work with Jetpack-enabled sites. Use this if you can't use the script above or if you want to have a choice between the new and classic editors.</p>
         <p>Drag the link below into your bookmarks:</p>
-        <p><strong><a href="javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.site__content[href]').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit'))})()">Edit in classic editor</a></strong></p>
+        <p><strong><a href="javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.site__content[href]').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]+'&amp;classic-editor'):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit&amp;classic-editor'))})()">Edit in classic editor</a></strong></p>
         <p>Or, if you can't drag, create a new bookmark with the following URI:</p>
-        <p><code>javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.site__content[href]').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit'))})()</code></p>
+        <p><code>javascript:(function(){var p=location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);var b=document.querySelector('.site__content[href]').href;location.replace((!p[3]||p[3]=='new')?(b+'wp-admin/post-new.php?post_type='+p[1]+'&amp;classic-editor'):(b+'wp-admin/post.php?post='+p[3]+'&amp;action=edit&amp;classic-editor'))})()</code></p>
         <p>When you're on the new editor, click on the bookmark you made to edit your post in the classic editor. Note that any unsaved changes you made to the post will be lost after clicking the bookmark.</p>
       </section>
 
@@ -125,7 +125,7 @@
         <p>For every blog, you will want to bookmark these links, changing "example.wordpress.com" to your own blog:</p>
         <dl>
           <dt>New Post</dt>
-          <dd><strong>http://<var>example.wordpress.com</var>/wp-admin/post-new.php</strong></dd>
+          <dd><strong>http://<var>example.wordpress.com</var>/wp-admin/post-new.php?classic-editor</strong></dd>
           <dt>All Posts</dt>
           <dd><strong>http://<var>example.wordpress.com</var>/wp-admin/edit.php</strong></dd>
           <dt>Dashboard</dt>
@@ -137,7 +137,7 @@
           <label>Domain: <input type="text" id="domain" value="example.wordpress.com" onkeypress="onEnterPress(event,generateLinks)" /></label>
           <button id="bookmark-gen-btn" onclick="generateLinks()">Generate Links</button>
           <ul id="bookmark-output">
-            <li><a id="bookmark-new-post" href="http://example.wordpress.com/wp-admin/post-new.php">New Post on example.wordpress.com</a></li>
+            <li><a id="bookmark-new-post" href="http://example.wordpress.com/wp-admin/post-new.php?classic-editor">New Post on example.wordpress.com</a></li>
             <li><a id="bookmark-all-posts" href="http://example.wordpress.com/wp-admin/edit.php">All Posts on example.wordpress.com</a></li>
             <li><a id="bookmark-dashboard" href="http://example.wordpress.com/wp-admin/">Dashboard for example.wordpress.com</a></li>
           </ul>
