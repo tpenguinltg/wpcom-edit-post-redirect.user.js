@@ -4,6 +4,9 @@
 // @description Redirects the new post page to the classic post page
 // @include     https://wordpress.com/post*
 // @include     https://wordpress.com/page*
+// @include     https://wordpress.com/block-editor*
+// @include     https://*.wordpress.com/wp-admin/post.php*
+// @include     https://*.wordpress.com/wp-admin/post-new.php*
 // @version     1.5.0
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
@@ -13,6 +16,16 @@
 // @copyright   2015, tPenguinLTG (http://tpenguinltg.wordpress.com/)
 // @run-at      document-start
 // ==/UserScript==
+
+// if already at the classic editor, don't do anything
+if(/classic-editor/.test(window.location.search)) return;
+
+// if already at old dashboard URL, redirect to classic editor
+if(/wp-admin/.test(window.location.pathname)) {
+  window.location.replace(window.location.href + (window.location.search ? "&" : "?") + "classic-editor");
+  return;
+}
+
 
 // gather information from URL
 var parsedUrl=window.location.pathname.match(/(post|page)(?:\/([^\/]+)(?:\/(\d+|new)?)?)?/);
@@ -71,11 +84,11 @@ function buildClassicLink(base) {
     var posturl=base;
     //new post
     if(postid == "new" || postid == null) {
-      posturl+="/wp-admin/post-new.php?post_type="+postType;
+      posturl+="/wp-admin/post-new.php?post_type="+postType+"&classic-editor"
     }//if
     //existing post
     else {
-      posturl+="/wp-admin/post.php?post="+postid+"&action=edit";
+      posturl+="/wp-admin/post.php?post="+postid+"&action=edit&classic-editor";
     }//end if
 
     return posturl;
