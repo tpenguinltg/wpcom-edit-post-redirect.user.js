@@ -17,6 +17,7 @@ If you don't like this script or can't use it for any reason, there are [other w
 
 
 ## Changelog
+* **v1.6.0:** Update for new [block editor](https://wordpress.com/blog/2020/08/13/the-classic-editing-experience-is-moving-not-leaving/) redirect on old classic editor URLs. Also clean up code.
 * **v1.5.0:** Update for a slight restructuring in the editor page. This only affects the fallback attempt.
 * **v1.4.0:** Update for [new editor](https://en.blog.wordpress.com/2015/11/16/new-high-speed-editor/)
 * **v1.3.1:** Fix new post redirection for default blog
