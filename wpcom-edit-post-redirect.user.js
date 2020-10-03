@@ -7,7 +7,7 @@
 // @include     https://wordpress.com/block-editor*
 // @include     https://*.wordpress.com/wp-admin/post.php*
 // @include     https://*.wordpress.com/wp-admin/post-new.php*
-// @version     1.5.0
+// @version     1.6.0
 // @updateURL   https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js/raw/master/wpcom-edit-post-redirect.user.js
 // @homepageURL https://greasyfork.org/en/scripts/8581-wordpress-com-edit-post-redirects
 // @homepageURL https://github.com/tpenguinltg/wpcom-edit-post-redirect.user.js
